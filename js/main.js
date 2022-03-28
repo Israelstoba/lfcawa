@@ -56,8 +56,9 @@ function makePayment(e) {
     amount: document.getElementById("amount").value,
     currency: "NGN",
 
-    redirect_url:
-      "https://www.dropbox.com/s/13bau8tkdxtuphc/lfc-awa-logo.png?dl=0",
+    redirect_url: "#",
+
+    logo: "https://www.dropbox.com/s/13bau8tkdxtuphc/lfc-awa-logo.png?dl=0",
 
     customer: {
       name: document.getElementById("name").value,
@@ -70,8 +71,6 @@ function makePayment(e) {
       description: document.getElementById("offering".value),
     },
 
-    callback: function (FlutterwaveCheckout) {
-      console.log(FlutterwaveCheckout);
-    },
+    callback: function (FlutterwaveCheckout) {},
   });
 }
