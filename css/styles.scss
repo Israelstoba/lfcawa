@@ -1,0 +1,825 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Nunito:wght@400;700&display=swap");
+
+// STYLING VARIABLES
+:root {
+  --clr-primary: #ff0000;
+  --clr-primary-dark: #ac0000;
+  --clr-primary-transparent: rgba(255, 0, 0, 0.555);
+  --clr-white: #fff;
+  --clr-grey: #f5f4f4;
+  --clr-text: #555;
+  --clr-grey-text: #616161;
+  --clr-black: #000;
+  --title-big: 4rem;
+  --title-small: 2.5rem;
+  --subtitle: 1.8rem;
+  --text: 1.2rem;
+  --title-line-height: 1rem;
+  --box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+//GENERAL STYLING RULES
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "nunito", sans-serif;
+  line-height: normal;
+}
+p {
+  line-height: 1.5;
+  color: var(--clr-text);
+}
+
+.container-fluid {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 2rem 0 1rem;
+
+  &:hover,
+  &:focus {
+    background: var(--clr-primary-dark);
+  }
+}
+
+// /////////Overlay style
+// .overlay {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   background-image: linear-gradient(to bottom right, #ff0000, #ac0000);
+//   opacity: 0.7;
+//   z-index: 1;
+// }
+
+// LOGO STYLES
+.logo img {
+  width: 150px;
+}
+/////////////SECTION TITLE STYLES /////////////////
+.section-title,
+.section-title-light {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    height: 7px;
+    width: 80px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.section-title {
+  color: var(--clr-primary);
+  &::after {
+    content: "";
+    background-color: var(--clr-primary);
+  }
+}
+.section-title-light {
+  color: var(--clr-white);
+  &::after {
+    content: "";
+    background-color: var(--clr-white);
+  }
+}
+
+//////////////COLUMN LAYOUT STYLES ////////////////
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
+  // margin-bottom: 2rem;
+  // margin-left: 1rem;
+}
+
+.col-3 {
+  flex-basis: 30%;
+  min-width: 300px;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+.col-2 img,
+.col-3 img {
+  max-width: 100%;
+  border-radius: 5px;
+
+  // max-height: 100%;
+}
+
+// NAVBAR STYLES
+.navbar {
+  width: 100% !important;
+  // background: grey;
+  padding: 1rem 4rem;
+  display: flex;
+  align-items: center;
+  box-shadow: -4px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 3rem;
+}
+
+.nav {
+  flex: 1;
+  text-align: right;
+}
+
+.nav__nav-list {
+  display: inline-block;
+
+  .nav-list--items {
+    display: inline-block;
+    margin-right: 1.2rem;
+
+    &:nth-child(1) {
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: var(--clr-primary);
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--clr-primary-dark);
+      }
+    }
+  }
+}
+
+// CAROUSEL DESIGN STYLES
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.carousel__image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.carousel__track-container {
+  position: relative;
+  height: 100%;
+}
+
+.carousel__track {
+  padding: 0;
+  margin: 0;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  clip-path: circle();
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.carousel__button--right {
+  padding-left: 5px;
+  padding-top: 5px;
+  right: -3rem;
+}
+
+.carousel__button--left {
+  left: -3rem;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.carousel__nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin: 0 12px;
+  background: var(--clr-text);
+}
+
+.events {
+  background: var(--clr-grey);
+  margin-top: 80px;
+  padding: 3rem 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--clr-white);
+  min-height: 500px;
+  height: auto;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 30px;
+}
+
+.card-title {
+  color: var(--clr-text);
+  // margin: 1rem 0 2rem;
+}
+
+/////////////////////// PAST EVENT MODAL POPUP//////////////////////////
+.past-event {
+  @media (max-width: 730px) {
+    .col-3 {
+      flex-basis: 90%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .col-3 {
+      min-width: 200px;
+    }
+  }
+}
+
+.pem-1,
+.pem-2,
+.pem-3 {
+  background: var(--clr-primary);
+  position: fixed;
+  padding: 15rem 2rem;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.past-event-modal {
+  position: relative;
+  // width: 100%;
+  max-width: 860px;
+  margin: auto;
+  background: var(--clr-grey);
+  padding: 7%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.past-event-modal-content {
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.exit-btn {
+  position: absolute;
+  color: var(--clr-white);
+  top: 1rem;
+  right: 1rem;
+  background: var(--clr-primary);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  // transform: translate(-50%, -50%);
+
+  &:hover,
+  &:focus {
+    background: var(--clr-primary-dark);
+  }
+}
+
+.modal-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+//////////////////////ABOUT PAGE STYLE RULES //////////////////////////
+.about-us {
+  .col-2 {
+    p {
+      margin: 2rem 0;
+    }
+    padding: 2rem;
+  }
+
+  .about-title {
+    margin-top: 4rem;
+  }
+
+  .mandate-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .our-services-btn {
+      margin-left: 4rem;
+    }
+  }
+  /////responsive styling for the about page//////
+  @media (max-width: 860px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 460px) {
+    .mandate-btn-wrapper {
+      flex-direction: column;
+    }
+    p,
+    .mandate-title {
+      text-align: center;
+    }
+    .btn {
+      margin-bottom: 1rem;
+    }
+
+    .our-services-btn {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.mandate-title {
+  color: var(--clr-primary);
+  margin: 1.5rem 0;
+}
+
+////////////////////// THE MANDATE PAGE ///////////////////////////////
+.mandate-bg {
+  width: 100%;
+  height: 100vh;
+  // padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .container-fluid {
+    max-width: 780px;
+  }
+}
+
+.mandate-container {
+  background: var(--clr-white);
+  box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 4rem 2rem;
+  margin: 6.25rem 0;
+
+  .the-mandate-title {
+    margin-bottom: 3rem;
+  }
+
+  .mandate-text-in-border {
+    border: 2px solid var(--clr-primary);
+    margin-top: 2rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+}
+
+.pillar-title {
+  margin: 4rem 0 3rem;
+}
+
+.pillar-heading {
+  color: var(--clr-text);
+  margin: 2rem 0 1rem;
+}
+
+.pillar-number {
+  background: var(--clr-primary);
+  padding: 0.6rem;
+  clip-path: circle();
+  color: var(--clr-white);
+  margin-right: 1rem;
+
+  &:nth-child(10) {
+    font-size: 1rem;
+  }
+}
+
+.mandate-hr {
+  color: var(--clr-primary);
+  width: 20%;
+  text-align: center;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  border-top: 5px dotted var(--clr-text);
+  margin: 4rem auto 0;
+  background-color: none;
+}
+
+////////////////////// OUR SERVICES PAGE STYLE RULES ///////////////////
+
+.our-services {
+  width: 100%;
+}
+
+.our-services-hero {
+  background-image: url(/images/worship.jpeg);
+  width: 100%;
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+
+  h1 {
+    color: var(--clr-white);
+    font-size: calc(5rem - 1.5rem);
+    text-align: center;
+  }
+}
+
+.services-main__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 4rem 1rem;
+
+  .col-2 {
+    min-width: 250px;
+  }
+}
+
+.services-card {
+  background-color: var(--clr-white);
+  box-shadow: var(--box-shadow);
+  padding: 2em 1em;
+  margin: 2em 1em;
+  border-radius: 10px;
+}
+
+///////////////////style rules for the contact page /////////////////////@at-root
+.contact-us {
+  background-color: var(--clr-primary);
+  padding: 5rem 0 3rem;
+
+  @media (max-width: 360px) {
+    .col-2 {
+      flex-basis: 50%;
+      min-width: 250px;
+    }
+  }
+}
+
+.contact-us__big-text {
+  color: var(--clr-white);
+  font-size: 4rem;
+}
+
+.contact-us__text {
+  color: var(--clr-white);
+  margin-top: 2.5rem;
+}
+
+.form-box {
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  max-width: 500px;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+
+  .btn {
+    width: 200px;
+    margin: 2rem auto 1rem;
+  }
+
+  .form {
+    width: 100%;
+
+    .input-container {
+      width: 100%;
+
+      .form__input {
+        width: 100%;
+        border: 2px solid var(--clr-primary);
+        padding: 0.5rem;
+        border-radius: 5px;
+        margin: 0.7rem 0;
+        outline: none;
+        font-size: 1rem;
+
+        &:hover,
+        &:focus {
+          border-color: var(--clr-primary-dark);
+        }
+      }
+      .text-area {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .form__title {
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.text-box {
+  padding: 3rem 1rem;
+}
+
+////////////////////Get in touch style rule
+
+.get-in-touch-bg {
+  background-color: var(--clr-white);
+  padding: 6rem 2rem;
+
+  .main-content__left,
+  .main-content__right {
+    margin-bottom: 3rem;
+  }
+
+  .contact-cta-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+
+    .contact-icon {
+      color: var(--clr-primary);
+      margin-bottom: 1rem;
+
+      &:hover {
+        transform: rotate(45deg);
+      }
+    }
+
+    .call-us-container,
+    .send-mail-container {
+      text-align: center;
+      min-width: 200px;
+      // margin-left: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+  .get-in-touch__big-text {
+    text-align: center;
+    margin: 0 0 3rem;
+    color: var(--clr-primary);
+    font-weight: bold;
+  }
+  .get-in-touch__small-text {
+    text-align: center;
+    margin: 2rem 0 3rem;
+    color: var(--clr-grey-text);
+  }
+  p {
+    color: var(--clr-grey-text);
+    font-weight: bold;
+  }
+
+  .join-us__social {
+    text-align: center;
+    margin: 3rem 0;
+
+    a {
+      padding: 1rem;
+    }
+
+    .icon {
+      margin: 0 1rem;
+      color: var(--clr-primary);
+    }
+
+    .facebook-icon:hover,
+    .facebook-icon:focus {
+      color: #3b5998;
+    }
+
+    .twitter-icon:hover,
+    .twitter-icon:focus {
+      color: #55acee;
+    }
+
+    .linkedin-icon:hover,
+    .linkedin-icon:focus {
+      color: #0077b5;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .contact-cta-container {
+      flex-direction: column;
+    }
+
+    .row {
+      flex-direction: column;
+    }
+
+    .btn:nth-child(1) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.main-content__right {
+  .join-us-text {
+    text-align: center;
+    color: var(--clr-grey-text);
+  }
+}
+
+///////////////////// Giving Online ////////////@at-root
+
+.giving__container {
+  background-image: url(/images/giving.jpg);
+  width: 100%;
+  height: auto;
+  padding: 4rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: var(--clr-white);
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-primary);
+    // background-image: linear-gradient(to bottom right, #ff0000, #ac0000);
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .giving__container--big-text {
+    text-align: center;
+    color: var(--clr-white);
+    font-size: 2.5rem;
+  }
+
+  .giving__text-container {
+    .giving__qoute {
+      font-size: 4rem;
+      margin-top: 3rem;
+
+      .quote-span {
+        color: var(--clr-primary);
+        text-shadow: 0 0 5px var(--clr-black);
+      }
+    }
+
+    .payment__text {
+      margin: 2rem 0;
+      color: var(--clr-white);
+    }
+  }
+
+  .payment__form-box {
+    margin: 3rem 1rem 0;
+    background-color: var(--clr-primary-transparent);
+
+    .payment__form-box--title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .btn {
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.giving__container > * {
+  position: relative;
+  z-index: 2;
+}
+
+////////////////////// MEDIA QUERIES FOR THE WEBPAGE///////////////////
+
+// media query rule for the carousel.
+
+@media (max-width: 1200px) {
+  .carousel {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel {
+    height: 55vh;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .carousel {
+    height: 30vh;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .carousel {
+    height: 20vh;
+  }
+}
+
+////////////////media query for our services page ///////////////
+// @media (min);
