@@ -58,7 +58,7 @@ function makePayment(e) {
 
     redirect_url: "#",
 
-    logo: "https://www.dropbox.com/s/13bau8tkdxtuphc/lfc-awa-logo.png?dl=0",
+    logo: "https://ibb.co/nR831Xr",
 
     customer: {
       name: document.getElementById("name").value,
