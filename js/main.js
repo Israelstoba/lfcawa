@@ -56,6 +56,8 @@ function makePayment(e) {
     amount: document.getElementById("amount").value,
     currency: "NGN",
 
+    redirect_url: "https://glaciers.titanic.com/handle-flutterwave-payment",
+
     customer: {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
