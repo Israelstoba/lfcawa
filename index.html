@@ -252,62 +252,65 @@
 
     <section class="contact-us" id="contact-us">
       <h1 class="contact-title section-title-light">Contact Us</h1>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-2">
-            <div class="text-box">
-              <h1 class="contact-us__big-text">
-                WE WOULD LOVE TO HEAR FROM YOU!
-              </h1>
-              <p class="contact-us__text">
-                Whether you are old or new member, Please do not hesitate to
-                reach. us
-              </p>
+      <div class="contact-us-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-2">
+              <div class="text-box">
+                <h1 class="contact-us__big-text">
+                  WE WOULD LOVE TO HEAR FROM YOU
+                </h1>
+                <p class="contact-us__text">
+                  Whether you are old or new member, Please do not hesitate to
+                  reach. us
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-2">
-            <div class="form-box">
-              <h2 class="form__title">Write to us</h2>
-              <form action="POST" class="form contact-us-form">
-                <div class="input-container contact-us__input-container">
-                  <input
-                    class="form__input"
-                    type="text"
-                    name="name"
-                    placeholder="Full name"
-                  />
-                </div>
-                <div class="input-container contact-us__input-container">
-                  <input
-                    class="form__input"
-                    type="tel"
-                    name="phone"
-                    placeholder="Password"
-                  />
-                </div>
-                <div class="input-container contact-us__input-container">
-                  <input
-                    class="form__input"
-                    type="email"
-                    name="email"
-                    placeholder="Enter email"
-                  />
-                </div>
+            <div class="col-2">
+              <div class="form-box">
+                <h2 class="form__title">Write to us</h2>
+                <form action="" method="" class="form contact-us-form">
+                  <div class="input-container contact-us__input-container">
+                    <input
+                      class="form__input"
+                      type="text"
+                      name="name"
+                      placeholder="Full name"
+                    />
+                  </div>
+                  <div class="input-container contact-us__input-container">
+                    <input
+                      class="form__input"
+                      type="tel"
+                      name="phone"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="input-container contact-us__input-container">
+                    <input
+                      class="form__input"
+                      type="email"
+                      name="email"
+                      placeholder="Enter email"
+                    />
+                  </div>
 
-                <div class="input-container contact-us__input-container">
-                  <textarea
-                    class="form__input text-area"
-                    name="message"
-                    id="message"
-                    cols="20"
-                    rows="5"
-                    placeholder="Send us a message"
-                  ></textarea>
-                </div>
-
-                <button class="contact-cta btn">Send message</button>
-              </form>
+                  <div class="input-container contact-us__input-container">
+                    <textarea
+                      class="form__input text-area"
+                      name="message"
+                      id="message"
+                      cols="20"
+                      rows="5"
+                      placeholder="Send us a message"
+                    ></textarea>
+                  </div>
+                  <div class="btn-wrapper">
+                    <button class="contact-cta btn">Send message</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -373,17 +376,16 @@
 
           <div class="row">
             <div class="giving__text-container col-2">
-              <h1 class="giving__qoute">
-                GIVE AND YOU WILL RECEIVE
-                <span class="quote-span">!!!</span>
-              </h1>
+              <h1 class="giving__qoute">GIVE AND YOU WILL RECEIVE</h1>
               <figcaption>-Luke 6:38</figcaption>
 
               <p class="payment__text">
                 If you desire to learn more about the act of giving, click the
                 button below
               </p>
-              <a href="#" class="btn">Act Of Giving</a>
+              <div class="btn-wrapper">
+                <a href="#" class="btn">Act Of Giving</a>
+              </div>
             </div>
             <div class="giving__payment-container col-2">
               <div class="payment__form-box form-box">
@@ -392,7 +394,7 @@
                   "Flutterwave"
                 </h3>
                 <form
-                  class="form payment-form."
+                  class="form payment-form"
                   action=""
                   method="POST"
                   id="paymentForm"
@@ -460,10 +462,11 @@
                       required
                     />
                   </div>
-
-                  <button class="btn" id="submit-btn" onclick="makePayment()">
-                    Pay Now
-                  </button>
+                  <div class="btn-wrapper">
+                    <button class="btn" id="submit-btn" onclick="makePayment()">
+                      Pay Now
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
