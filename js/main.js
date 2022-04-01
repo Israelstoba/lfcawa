@@ -1,7 +1,7 @@
 /////////////////////Scriptrs for the past event modal popup
-var modalOpenPem1 = document.querySelector(".btn-pem1");
-var modalOpenPem2 = document.querySelector(".btn-pem2");
-var modalOpenPem3 = document.querySelector(".btn-pem3");
+var modalOpenPem1 = document.querySelector(".custom-btn-pem1");
+var modalOpenPem2 = document.querySelector(".custom-btn-pem2");
+var modalOpenPem3 = document.querySelector(".custom-btn-pem3");
 
 var modalBgPem1 = document.querySelector(".pem-1");
 var modalBgPem2 = document.querySelector(".pem-2");
@@ -52,7 +52,7 @@ function makePayment(e) {
 
   FlutterwaveCheckout({
     public_key: "FLWPUBK_TEST-2aa1cc19c7cf8414c644510c6345c6ba-X",
-    tx_ref: "stoba" + Math.floor(Math.random() * 1000000000 + 1),
+    tx_ref: "stoba-" + " " + Math.floor(Math.random() * 1000000000 + 1),
     amount: document.getElementById("amount").value,
     currency: "NGN",
 
@@ -71,6 +71,6 @@ function makePayment(e) {
       description: document.getElementById("offering".value),
     },
 
-    callback: function (FlutterwaveCheckout) {},
+    callback: function (data) {},
   });
 }
