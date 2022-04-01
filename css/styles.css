@@ -220,10 +220,6 @@ ul {
   background-color: var(--clr-primary-dark);
 }
 
-#myCarousel .carousel-indicators {
-  background-color: var(--clr-primary-dark);
-}
-
 #myCarousel .carousel-inner .carousel-item .carousel-container {
   padding: 4rem 7rem;
   position: absolute;
