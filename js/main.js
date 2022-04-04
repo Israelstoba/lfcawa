@@ -1,4 +1,17 @@
-/////////////////////Scriptrs for the past event modal popup
+/////////////////// Script for the navigation menu //////////////////
+
+var navigationUl = document.getElementById("navigation-ul");
+navigationUl.style.maxHeight = "0px";
+
+function menuToggle() {
+  if (navigationUl.style.maxHeight == "0px") {
+    navigationUl.style.maxHeight = "100vh";
+  } else {
+    navigationUl.style.maxHeight = "0px";
+  }
+}
+
+/////////////////////Script for the past event modal popup ///////////////////
 var modalOpenPem1 = document.querySelector(".custom-btn-pem1");
 var modalOpenPem2 = document.querySelector(".custom-btn-pem2");
 var modalOpenPem3 = document.querySelector(".custom-btn-pem3");
@@ -11,7 +24,7 @@ var modalClosePem1 = document.querySelector(".exit-pem1");
 var modalClosePem2 = document.querySelector(".exit-pem2");
 var modalClosePem3 = document.querySelector(".exit-pem3");
 
-///////////////for the first past event
+///////////////for the first past event modal //////////////
 modalOpenPem1.addEventListener("click", function () {
   modalBgPem1.classList.add("modal-active");
 });
@@ -20,7 +33,7 @@ modalClosePem1.addEventListener("click", function () {
   modalBgPem1.classList.remove("modal-active");
 });
 
-/////////////////// for the second past event
+/////////////////// for the second past event modal ///////////////////////
 modalOpenPem2.addEventListener("click", function () {
   modalBgPem2.classList.add("modal-active");
 });
@@ -29,7 +42,7 @@ modalClosePem2.addEventListener("click", function () {
   modalBgPem2.classList.remove("modal-active");
 });
 
-///////////////for the third past event
+///////////////for the third past event modal /////////////////////
 modalOpenPem3.addEventListener("click", function () {
   modalBgPem3.classList.add("modal-active");
 });

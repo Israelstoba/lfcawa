@@ -9,6 +9,7 @@
   --clr-grey: #f5f4f4;
   --clr-text: #555;
   --clr-grey-text: #616161;
+  --clr-dark-grey: #333;
   --clr-black: #000;
   --title-big: 4rem;
   --title-small: 2.5rem;
@@ -97,7 +98,7 @@ ul {
 
 // LOGO STYLES
 .brand-logo img {
-  width: 150px;
+  width: 100px;
 }
 
 .giving__qoute,
@@ -173,14 +174,13 @@ ul {
   // max-height: 100%;
 }
 
-// navigationBAR STYLES
+////////// navigationBAR STYLES /////////////@at-root
+
 .navigationbar {
-  width: 100% !important;
-  padding: 1rem 4rem;
+  width: 100%;
+  padding: 20px;
   display: flex;
   align-items: center;
-  // box-shadow: -4px 0px 10px 5px rgba(0, 0, 0, 0.3);
-  // margin-bottom: 3rem;
 }
 
 .navigation {
@@ -188,12 +188,13 @@ ul {
   text-align: right;
 }
 
-.navigation__navigation-list {
+.navigation-ul {
   display: inline-block;
+  list-style-type: none;
 
-  .navigation-list--items {
+  .navigation-ul--li {
     display: inline-block;
-    margin-right: 1.2rem;
+    margin-right: 20px;
 
     &:nth-child(1) {
       font-weight: bold;
@@ -210,16 +211,25 @@ ul {
     }
   }
 }
+.custom-menu-icon {
+  width: 25px;
+  display: none;
+}
 
 // CAROUSEL DESIGN STYLES
 #myCarousel {
-  padding-bottom: 2rem;
-  background-color: var(--clr-primary-dark);
+  padding-bottom: 3.5rem;
+  background: var(--clr-grey);
 
   .carousel-indicators {
-    // width: 10px;
-    // height: 10px;
-    // color: var(--clr-primary-transparent);
+    li {
+      background-color: var(--clr-primary);
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
   }
 
   .carousel-inner {
@@ -472,7 +482,12 @@ ul {
 }
 
 .our-services-hero {
-  background-image: url(/images/worship.jpeg);
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.2),
+      var(--clr-primary)
+    ),
+    url(/images/worship.jpeg);
   width: 100%;
   min-height: 500px;
   background-position: center;
@@ -692,7 +707,14 @@ ul {
 ///////////////////// Giving Online ////////////
 .giving {
   .giving__container {
-    background-image: url(/images/giving.jpg);
+    /////////////////NOTE: This is one of the ways to add an overlay to a background image //////////////////
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.5),
+        var(--clr-primary)
+      ),
+      url(/images/giving.jpg);
+
     width: 100%;
     height: auto;
     padding: 4rem 0;
@@ -701,17 +723,19 @@ ul {
     position: relative;
     color: var(--clr-white);
 
-    &::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: var(--clr-primary);
-      opacity: 0.5;
-      z-index: 1;
-    }
+    ////just like the above overlay style this is also a way to add it without an extra html line of code ////
+
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   background-color: var(--clr-primary);
+    //   opacity: 0.5;
+    //   z-index: 1;
+    // }
 
     .giving__container--big-text {
       text-align: center;
@@ -754,6 +778,38 @@ ul {
 }
 
 ////////////////////// MEDIA QUERIES FOR THE WEBPAGE///////////////////
+
+////////////media query for the navigation bar ///////////////
+@media only screen and (max-width: 800px) {
+  .custom-menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navigation-ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 550px;
+    background-color: var(--clr-dark-grey);
+    z-index: 1000;
+    margin-top: 1.5rem;
+    overflow: hidden;
+    transition: max-height 0.5s;
+
+    .navigation-ul--li {
+      display: block;
+      margin-right: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .navigation-link {
+        color: var(--clr-white);
+      }
+    }
+  }
+}
 
 ///////////////////media query for contact-us , get in touch and giving section ////////////
 

@@ -7,6 +7,7 @@
   --clr-grey: #f5f4f4;
   --clr-text: #555;
   --clr-grey-text: #616161;
+  --clr-dark-grey: #333;
   --clr-black: #000;
   --title-big: 4rem;
   --title-small: 2.5rem;
@@ -94,7 +95,7 @@ ul {
 }
 
 .brand-logo img {
-  width: 150px;
+  width: 100px;
 }
 
 .giving__qoute,
@@ -175,8 +176,8 @@ ul {
 }
 
 .navigationbar {
-  width: 100% !important;
-  padding: 1rem 4rem;
+  width: 100%;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,32 +193,47 @@ ul {
   text-align: right;
 }
 
-.navigation__navigation-list {
+.navigation-ul {
   display: inline-block;
+  list-style-type: none;
 }
 
-.navigation__navigation-list .navigation-list--items {
+.navigation-ul .navigation-ul--li {
   display: inline-block;
-  margin-right: 1.2rem;
+  margin-right: 20px;
 }
 
-.navigation__navigation-list .navigation-list--items:nth-child(1) {
+.navigation-ul .navigation-ul--li:nth-child(1) {
   font-weight: bold;
 }
 
-.navigation__navigation-list .navigation-list--items .navigation-link {
+.navigation-ul .navigation-ul--li .navigation-link {
   color: var(--clr-primary);
   cursor: pointer;
 }
 
-.navigation__navigation-list .navigation-list--items .navigation-link:hover {
+.navigation-ul .navigation-ul--li .navigation-link:hover {
   text-decoration: underline;
   color: var(--clr-primary-dark);
 }
 
+.custom-menu-icon {
+  width: 25px;
+  display: none;
+}
+
 #myCarousel {
-  padding-bottom: 2rem;
-  background-color: var(--clr-primary-dark);
+  padding-bottom: 3.5rem;
+  background: var(--clr-grey);
+}
+
+#myCarousel .carousel-indicators li {
+  background-color: var(--clr-primary);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #myCarousel .carousel-inner .carousel-item .carousel-container {
@@ -493,7 +509,8 @@ ul {
 }
 
 .our-services-hero {
-  background-image: url(/images/worship.jpeg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.2)), to(var(--clr-primary))), url(/images/worship.jpeg);
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), var(--clr-primary)), url(/images/worship.jpeg);
   width: 100%;
   min-height: 500px;
   background-position: center;
@@ -738,7 +755,8 @@ ul {
 }
 
 .giving .giving__container {
-  background-image: url(/images/giving.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.5)), to(var(--clr-primary))), url(/images/giving.jpg);
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), var(--clr-primary)), url(/images/giving.jpg);
   width: 100%;
   height: auto;
   padding: 4rem 0;
@@ -746,18 +764,6 @@ ul {
   background-size: cover;
   position: relative;
   color: var(--clr-white);
-}
-
-.giving .giving__container::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--clr-primary);
-  opacity: 0.5;
-  z-index: 1;
 }
 
 .giving .giving__container .giving__container--big-text {
@@ -793,6 +799,35 @@ ul {
 .giving .giving__container > * {
   position: relative;
   z-index: 2;
+}
+
+@media only screen and (max-width: 800px) {
+  .custom-menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .navigation-ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 550px;
+    background-color: var(--clr-dark-grey);
+    z-index: 1000;
+    margin-top: 1.5rem;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+  }
+  .navigation-ul .navigation-ul--li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navigation-ul .navigation-ul--li .navigation-link {
+    color: var(--clr-white);
+  }
 }
 
 @media (max-width: 760px) {

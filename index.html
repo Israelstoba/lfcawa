@@ -13,7 +13,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
+    <!-- THIS IS THE EXTERNAL CSS LINK -->
     <link rel="stylesheet" href="css/styles.css" />
 
     <!-- FONT AWESOME LINK -->
@@ -23,44 +23,48 @@
     ></script>
   </head>
   <body>
-    <div class="navigationbar">
-      <div class="brand-logo">
-        <a href="index.html"><img src="images/lfc-awa-logo.png" alt="" /></a>
-      </div>
-      <div class="navigation">
-        <ul class="navigation__navigation-list">
-          <li class="navigation-list--items">
-            <a href="index.html" class="navigation-link">Home</a>
-          </li>
-          <li class="navigation-list--items">
-            <a href="#about-us" class="navigation-link">About Us</a>
-          </li>
-          <li class="navigation-list--items">
-            <a href="#contact-us" class="navigation-link">Contact Us</a>
-          </li>
-          <li class="navigation-list--items">
-            <a href="#giving" class="navigation-link">Give Online</a>
-          </li>
-          <li class="navigation-list--items">
-            <a href="#articles" class="navigation-link">Articles</a>
-          </li>
-        </ul>
+    <div class="custom-container-fluid">
+      <div class="navigationbar">
+        <div class="brand-logo">
+          <a href="index.html"><img src="images/lfc-awa-logo.png" alt="" /></a>
+        </div>
+        <div class="navigation">
+          <ul class="navigation-ul" id="navigation-ul">
+            <li class="navigation-ul--li">
+              <a href="index.html" class="navigation-link">Home</a>
+            </li>
+            <li class="navigation-ul--li">
+              <a href="#about-us" class="navigation-link">About Us</a>
+            </li>
+            <li class="navigation-ul--li">
+              <a href="#contact-us" class="navigation-link">Contact Us</a>
+            </li>
+            <li class="navigation-ul--li">
+              <a href="#giving" class="navigation-link">Give Online</a>
+            </li>
+            <li class="navigation-ul--li">
+              <a href="#articles" class="navigation-link">Articles</a>
+            </li>
+          </ul>
+        </div>
+        <img
+          class="custom-menu-icon"
+          src="/images/menu.png"
+          alt="this is the navigation menu icon"
+          onclick="menuToggle()"
+        />
       </div>
     </div>
 
-    <div
-      id="myCarousel"
-      class="carousel slide carousel-fade"
-      data-bs-ride="carousel"
-    >
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
-        <l1
+        <li
           data-bs-target="#myCarousel"
           data-bs-slide-to="0"
           class="active"
-        ></l1>
-        <l1 data-bs-target="#myCarousel" data-bs-slide-to="1"></l1>
-        <l1 data-bs-target="#myCarousel" data-bs-slide-to="2"></l1>
+        ></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
