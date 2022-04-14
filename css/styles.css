@@ -67,6 +67,31 @@ ul {
   list-style-type: none;
 }
 
+.scroll-btn {
+  background-color: var(--clr-primary-transparent);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 20000;
+  padding: 15px;
+  right: -70px;
+  bottom: 50px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.scroll-btn .scroll-btn-icon {
+  font-size: 30px;
+}
+
+.show {
+  right: 50px;
+}
+
 .custom-btn-secondary {
   background-color: var(--clr-white);
   color: var(--clr-primary);
@@ -94,12 +119,67 @@ ul {
   margin: 2rem 0 1rem;
 }
 
+.custom-form-box {
+  background-color: var(--clr-white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.custom-form-box .custom-btn {
+  width: 200px;
+}
+
+.custom-form-box .custom-form {
+  width: 100%;
+}
+
+.custom-form-box .custom-form .input-container {
+  width: 100%;
+}
+
+.custom-form-box .custom-form .input-container .custom-form__input {
+  width: 100%;
+  border: 2px solid var(--clr-primary);
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 0.7rem 0;
+  outline: none;
+  font-size: 1rem;
+}
+
+.custom-form-box .custom-form .input-container .custom-form__input:hover, .custom-form-box .custom-form .input-container .custom-form__input:focus {
+  border-color: var(--clr-primary-dark);
+}
+
+.custom-form-box .custom-form__title {
+  color: var(--clr-primary);
+  margin-bottom: 1.5rem;
+}
+
 .brand-logo img {
   width: 100px;
 }
 
 .giving__qoute,
-.contact-us__big-text {
+.section-big-text,
+.section-big-text-light {
   font-size: clamp(2.5rem, 10vw, 4rem);
 }
 
@@ -142,6 +222,32 @@ ul {
   background-color: var(--clr-white);
 }
 
+.section-container {
+  width: 100%;
+}
+
+.section-container .section-big-text {
+  color: var(--clr-white);
+}
+
+.section-container .section-big-text-light {
+  color: var(--clr-primary);
+}
+
+.section-container .section-p {
+  color: var(--clr-white);
+  margin-top: 2.5rem;
+}
+
+.section-container .section-p-dark {
+  color: var(--clr-text);
+  margin-top: 2.5rem;
+}
+
+.section-container .text-box {
+  padding: 3rem 1rem;
+}
+
 .custom-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -159,6 +265,14 @@ ul {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   min-width: 300px;
+}
+
+@media (max-width: 360px) {
+  .custom-col-2 .custom-col-2 {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    min-width: 250px;
+  }
 }
 
 .custom-col-3 {
@@ -572,76 +686,6 @@ ul {
   }
 }
 
-.contact-us .contact-us-container {
-  width: 100%;
-}
-
-.contact-us__big-text {
-  color: var(--clr-white);
-}
-
-.contact-us__text {
-  color: var(--clr-white);
-  margin-top: 2.5rem;
-}
-
-.custom-form-box {
-  background-color: var(--clr-white);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 2rem 1rem;
-  justify-content: center;
-  border-radius: 10px;
-  -webkit-box-shadow: var(--box-shadow);
-          box-shadow: var(--box-shadow);
-}
-
-.custom-form-box .custom-btn {
-  width: 200px;
-}
-
-.custom-form-box .custom-form {
-  width: 100%;
-}
-
-.custom-form-box .custom-form .input-container {
-  width: 100%;
-}
-
-.custom-form-box .custom-form .input-container .custom-form__input {
-  width: 100%;
-  border: 2px solid var(--clr-primary);
-  padding: 0.5rem;
-  border-radius: 5px;
-  margin: 0.7rem 0;
-  outline: none;
-  font-size: 1rem;
-}
-
-.custom-form-box .custom-form .input-container .custom-form__input:hover, .custom-form-box .custom-form .input-container .custom-form__input:focus {
-  border-color: var(--clr-primary-dark);
-}
-
-.custom-form-box .custom-form__title {
-  color: var(--clr-primary);
-  margin-bottom: 1.5rem;
-}
-
-.text-box {
-  padding: 3rem 1rem;
-}
-
 .get-in-touch-bg {
   background-color: var(--clr-white);
   padding: 6rem 2rem;
@@ -766,12 +810,6 @@ ul {
   color: var(--clr-white);
 }
 
-.giving .giving__container .giving__container--big-text {
-  text-align: center;
-  color: var(--clr-white);
-  font-size: 2.5rem;
-}
-
 .giving .giving__container .giving__text-container .giving__qoute {
   margin-top: 3rem;
 }
@@ -799,6 +837,19 @@ ul {
 .giving .giving__container > * {
   position: relative;
   z-index: 2;
+}
+
+.worker {
+  background-color: var(--clr-white);
+  padding: 5rem 1rem 3rem;
+}
+
+@media (max-width: 360px) {
+  .worker .custom-col-2 {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    min-width: 250px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -832,22 +883,26 @@ ul {
 
 @media (max-width: 760px) {
   .contact-us .custom-btn,
-  .giving .custom-btn {
+  .giving .custom-btn,
+  .worker .custom-btn {
     text-align: center;
   }
   .contact-us .custom-col-2,
-  .giving .custom-col-2 {
+  .giving .custom-col-2,
+  .worker .custom-col-2 {
     width: 100%;
   }
   .contact-us .custom-row,
-  .giving .custom-row {
+  .giving .custom-row,
+  .worker .custom-row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
   .contact-us .input-container button,
-  .giving .input-container button {
+  .giving .input-container button,
+  .worker .input-container button {
     text-align: center;
   }
   .custom-btn-wrapper {
@@ -857,6 +912,9 @@ ul {
     display: -ms-grid;
     display: grid;
     place-content: center;
+  }
+  .show {
+    right: 20px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

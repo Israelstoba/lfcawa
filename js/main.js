@@ -11,6 +11,16 @@ function menuToggle() {
   }
 }
 
+////////////////////Scroll to top btn ///////////////////
+var scrollBtn = document.querySelector(".scroll-btn");
+
+window.onscroll = function () {
+  scrollBtn.classList.toggle("show", window.scrollY >= 1000);
+};
+scrollBtn.onclick = function () {
+  window.scrollTo({ behavior: "smooth", top: 0 });
+};
+
 /////////////////////Script for the past event modal popup ///////////////////
 var modalOpenPem1 = document.querySelector(".custom-btn-pem1");
 var modalOpenPem2 = document.querySelector(".custom-btn-pem2");
