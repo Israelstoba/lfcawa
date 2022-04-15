@@ -83,7 +83,8 @@ ul {
   place-content: center;
 
   .scroll-btn-icon {
-    font-size: 30px;
+    font-size: 25px;
+    color: var(--clr-white);
   }
 }
 
@@ -312,10 +313,13 @@ ul {
 
 // CAROUSEL DESIGN STYLES
 #myCarousel {
-  padding-bottom: 3.5rem;
+  // padding-bottom: 3.5rem;
+  position: relative;
   background: var(--clr-grey);
 
   .carousel-indicators {
+    position: absolute;
+    bottom: -50px;
     li {
       background-color: var(--clr-primary);
       height: 15px;
@@ -334,6 +338,21 @@ ul {
         bottom: 0;
         left: 0;
         right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .carousel-indicators {
+      position: absolute;
+      bottom: -50px;
+      li {
+        background-color: var(--clr-primary);
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
       }
     }
   }
@@ -881,6 +900,6 @@ ul {
   }
 
   .show {
-    right: 20px;
+    right: 15px;
   }
 }
