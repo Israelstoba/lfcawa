@@ -69,6 +69,7 @@ ul {
 }
 
 ////////////// Scroll button ///////////////
+
 .scroll-btn {
   background-color: var(--clr-primary-transparent);
   box-shadow: var(--box-shadow);
@@ -91,6 +92,7 @@ ul {
 .show {
   right: 50px;
 }
+
 ///////////Custom button for all webpages /////////////
 .custom-btn-secondary {
   background-color: var(--clr-white);
@@ -146,6 +148,9 @@ ul {
       .custom-form__input {
         width: 100%;
         border: 2px solid var(--clr-primary);
+        color: var(--clr-grey-text);
+        // line-height: 5rem;
+
         padding: 0.5rem;
         border-radius: 5px;
         margin: 0.7rem 0;
@@ -242,6 +247,7 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 0 auto;
 }
 
 .custom-col-2 {
@@ -360,7 +366,6 @@ ul {
 
 .events {
   background: var(--clr-grey);
-  // margin-top: 80px;
   padding: 3rem 1rem;
 }
 
@@ -825,6 +830,10 @@ ul {
   background-color: var(--clr-white);
   padding: 5rem 1rem 3rem;
 
+  .unit-input__container {
+    color: var(--clr-grey-text);
+  }
+
   @media (max-width: 360px) {
     .custom-col-2 {
       flex-basis: 50%;
@@ -901,5 +910,17 @@ ul {
 
   .show {
     right: 15px;
+  }
+}
+
+//////////////media queries for custom row /////////
+
+@media (max-width: 730px) {
+  .custom-row {
+    display: flex;
+    // flex-direction: ;
+    align-items: center;
+    // flex-wrap: wrap;
+    justify-content: center;
   }
 }
