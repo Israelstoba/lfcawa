@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Nunito:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Nunito:wght@400;700&display=swap');
 
 // STYLING VARIABLES
 :root {
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: "montserrat", sans-serif;
+  font-family: 'montserrat', sans-serif;
 }
 
 h1,
@@ -40,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "nunito", sans-serif;
+  font-family: 'nunito', sans-serif;
   line-height: normal;
 }
 p {
@@ -56,7 +56,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--clr-white);
 
   &:hover {
@@ -182,7 +182,7 @@ ul {
   font-size: clamp(2.5rem, 10vw, 4rem);
 }
 
-/////////////SECTION GENERAL / TITLE STYLES /////////////////
+///////////// GENERAL SECTION / TITLE STYLES /////////////////
 .section-title,
 .section-title-light {
   text-align: center;
@@ -191,7 +191,7 @@ ul {
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     height: 7px;
     width: 80px;
     border-radius: 5px;
@@ -205,14 +205,14 @@ ul {
 .section-title {
   color: var(--clr-primary);
   &::after {
-    content: "";
+    content: '';
     background-color: var(--clr-primary);
   }
 }
 .section-title-light {
   color: var(--clr-white);
   &::after {
-    content: "";
+    content: '';
     background-color: var(--clr-white);
   }
 }
@@ -842,6 +842,59 @@ ul {
   }
 }
 
+/////////////////// Article style rules //////////////////////
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 4rem 7rem;
+}
+
+.article-container {
+  flex-basis: 60%;
+  margin-bottom: 5rem;
+  .article-title {
+    margin: 1rem 0 2rem;
+    color: var(--clr-primary);
+  }
+
+  .article-container-body {
+    padding: 0 1rem;
+
+    p {
+      text-align: justify;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.sidebar__container {
+  flex-basis: 30%;
+  padding: 2rem 1rem;
+  width: 100%;
+  background-color: var(--clr-grey);
+
+  .sub-article {
+    margin-bottom: 2.5rem;
+
+    .subtitle {
+      a {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        font-weight: bold;
+        line-height: 0 !important;
+        color: var(--clr-primary);
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
 ////////////////////// MEDIA QUERIES FOR THE WEBPAGE///////////////////
 
 ////////////media query for the navigation bar ///////////////
@@ -867,7 +920,7 @@ ul {
       display: block;
       margin-right: 50px;
       margin-top: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
 
       .navigation-link {
         color: var(--clr-white);
